@@ -24,3 +24,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "Movies App"
 include(":app")
+include(":feature")
+include(":core")
+include(":core:network")
+include(":core:model")
