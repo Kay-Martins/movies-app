@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.kaycode.core.network"
+    namespace = "com.kaycode.feature.latest_films"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -36,12 +36,16 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(project(":core:model"))
+    implementation(project(":core:network"))
+    implementation(project(":core:utils"))
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
     implementation(libs.hilt)
     implementation(libs.hilt.compiler)
-    implementation(project(":core:model"))
     testImplementation(libs.junit)
     testImplementation(libs.mockito.kotlin)
     testImplementation(libs.coroutines.test)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 }
