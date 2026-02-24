@@ -5,9 +5,7 @@ import retrofit2.HttpException
 import retrofit2.Response
 import javax.inject.Inject
 
-class ApiHandler @Inject constructor(
-
-): IApiHandler {
+class ApiHandler @Inject constructor(): IApiHandler {
     override suspend fun <T : Any> handleApi(apiCall: suspend () -> Response<T>): ApiResponse<T> {
         return try {
             val response = apiCall()

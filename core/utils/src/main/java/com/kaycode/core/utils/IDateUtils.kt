@@ -5,5 +5,6 @@ import java.time.LocalDate
 interface IDateUtils {
     fun getCurrentDateInYyyymmdd(): String
     fun getThreeMonthsAgoDateInYyyymmdd(): String
+    fun getReleaseYearFromDateString(releaseDate: String): Int
 
 }

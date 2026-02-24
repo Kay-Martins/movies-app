@@ -13,7 +13,7 @@ class RetrofitProvider @Inject constructor(
 
     private fun createRetrofit(): Retrofit =
         Retrofit.Builder()
-            .baseUrl(NetworkConstants.BASE_URL)
+            .baseUrl(NetworkConstants.API_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 }

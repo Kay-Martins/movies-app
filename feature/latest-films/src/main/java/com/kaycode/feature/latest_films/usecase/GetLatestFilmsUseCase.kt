@@ -8,6 +8,6 @@ import javax.inject.Inject
 class GetLatestFilmsUseCase @Inject constructor(
     private val latestFilmsRepository: ILatestFilmsRepository
 ): IGetLatestFilmsUseCase {
-    override suspend fun invoke(page: Int): ApiResponse<DiscoverMovieResponse> =
+    override suspend operator fun invoke(page: Int): ApiResponse<DiscoverMovieResponse> =
         latestFilmsRepository.getLatestFilms(page)
 }

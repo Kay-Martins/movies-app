@@ -2,6 +2,10 @@ package com.kaycode.feature.latest_films.di
 
 import com.kaycode.feature.latest_films.data.ILatestFilmsRepository
 import com.kaycode.feature.latest_films.data.LatestFilmsRepository
+import com.kaycode.feature.latest_films.manager.ILatestFilmsManager
+import com.kaycode.feature.latest_films.manager.LatestFilmsManager
+import com.kaycode.feature.latest_films.provider.IMovieThumbnailListProvider
+import com.kaycode.feature.latest_films.provider.MovieThumbnailListProvider
 import com.kaycode.feature.latest_films.usecase.GetLatestFilmsUseCase
 import com.kaycode.feature.latest_films.usecase.IGetLatestFilmsUseCase
 import dagger.Binds
@@ -23,4 +27,11 @@ class LatestFilmsModule {
     @ViewModelScoped
     fun bindGetLatestFilmsUseCase(getLatestFilmsUseCase: GetLatestFilmsUseCase): IGetLatestFilmsUseCase = getLatestFilmsUseCase
 
+    @Binds
+    @ViewModelScoped
+    fun bindProvideMovieThumbnailList(movieThumbnailListProvider: MovieThumbnailListProvider): IMovieThumbnailListProvider = movieThumbnailListProvider
+
+    @Binds
+    @ViewModelScoped
+    fun bindLatestFilmsManager(latestFilmsManager: LatestFilmsManager): ILatestFilmsManager = latestFilmsManager
 }

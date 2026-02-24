@@ -6,14 +6,14 @@ data class DiscoverMovieResponse(
     @SerializedName("page")
     val page: Int,
     @SerializedName("results")
-    val results: List<Result>,
+    val results: List<MovieResult>,
     @SerializedName("total_pages")
     val totalPages: Int,
     @SerializedName("total_results")
     val totalResults: Int
 )
 
-data class Result(
+data class MovieResult(
     @SerializedName("adult")
     val adult: Boolean,
     @SerializedName("backdrop_path")
