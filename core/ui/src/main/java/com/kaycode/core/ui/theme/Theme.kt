@@ -1,4 +1,4 @@
-package com.kaycode.moviesapp.ui.theme
+package com.kaycode.core.ui.theme
 
 import android.app.Activity
 import android.os.Build

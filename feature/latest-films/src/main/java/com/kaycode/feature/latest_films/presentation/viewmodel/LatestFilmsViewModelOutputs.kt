@@ -17,7 +17,7 @@ sealed class LatestFilmsState {
         val isOnFirstPage: Boolean,
         val isOnLastPage: Boolean
     ): LatestFilmsState()
-    data class Error(val message: String): LatestFilmsState()
+    data class Error(val message: Int): LatestFilmsState()
 }
 
 sealed class LatestFilmsEffects {

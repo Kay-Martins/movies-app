@@ -5,4 +5,5 @@ interface LatestFilmsViewModelInputs {
     fun onStartClick()
     fun onNextPageClick()
     fun onPreviousPageClick()
+    fun onMovieThumbnailClick(id: Int)
 }

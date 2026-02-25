@@ -16,6 +16,7 @@ kotlin {
 
 dependencies {
     implementation(libs.dagger)
+    implementation(libs.hilt.core)
     ksp(libs.dagger.compiler)
     implementation(project(":core:model"))
     testImplementation(libs.junit)

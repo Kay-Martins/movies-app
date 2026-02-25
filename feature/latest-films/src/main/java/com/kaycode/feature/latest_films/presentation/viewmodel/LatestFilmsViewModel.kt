@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.kaycode.core.model.DiscoverMovieResponse
 import com.kaycode.core.network.retrofit.model.ApiResponse
+import com.kaycode.feature.latest_films.R
 import com.kaycode.feature.latest_films.manager.ILatestFilmsManager
 import com.kaycode.feature.latest_films.provider.IMovieThumbnailListProvider
 import com.kaycode.feature.latest_films.provider.MovieThumbnailListProvider
@@ -63,6 +64,12 @@ class LatestFilmsViewModel @Inject constructor(
         }
     }
 
+    override fun onMovieThumbnailClick(id: Int) {
+        viewModelScope.launch {
+            _latestFilmsEffects.emit(LatestFilmsEffects.NavigateToFilmDetails(id))
+        }
+    }
+
     private fun fetchAndDisplayLatestFilms(page: Int = DEFAULT_PAGE_NUMBER) {
         viewModelScope.launch {
             _latestFilmsState.emit(LatestFilmsState.Loading)
@@ -82,14 +89,13 @@ class LatestFilmsViewModel @Inject constructor(
                         )
                     )
                 }
-                is ApiResponse.Error -> _latestFilmsState.emit(LatestFilmsState.Error(ERROR_MESSAGE))
-                is ApiResponse.Exception -> _latestFilmsState.emit(LatestFilmsState.Error(ERROR_MESSAGE))
+                is ApiResponse.Error -> _latestFilmsState.emit(LatestFilmsState.Error(R.string.error_message))
+                is ApiResponse.Exception -> _latestFilmsState.emit(LatestFilmsState.Error(R.string.error_message))
             }
         }
     }
 
     companion object {
-        private const val ERROR_MESSAGE = "An error occurred. Please try again"
         private const val DEFAULT_PAGE_NUMBER = 1
     }
 }

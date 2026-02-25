@@ -1,7 +1,9 @@
 package com.kaycode.feature.latest_films.data
 
+import androidx.core.os.BuildCompat
 import com.kaycode.core.model.DiscoverMovieParams
 import com.kaycode.core.model.DiscoverMovieResponse
+import com.kaycode.core.network.BuildConfig
 import com.kaycode.core.network.handler.IApiHandler
 import com.kaycode.core.network.retrofit.api.ApiService
 import com.kaycode.core.network.retrofit.model.ApiResponse
@@ -53,4 +55,7 @@ class LatestFilmsRepository @Inject constructor(
             SORT_BY_PARAM to queryValues.sortBy
         )
     }
+
+    private fun getAuthorisationValue() =
+        "$AUTHORISATION_HEADER_VALUE${BuildConfig.API_KEY}"
 }

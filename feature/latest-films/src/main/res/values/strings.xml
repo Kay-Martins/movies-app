@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Latest Films Screen   -->
+    <string name="get_started">Tap "See Films" to get started.</string>
+    <string name="see_films">See Films</string>
+    <string name="next_page">Next</string>
+    <string name="previous_page">Previous</string>
+    <string name="error_message">An error occurred. Please try again.</string>
+    <string name="loading_message">Loading…</string>
+</resources>

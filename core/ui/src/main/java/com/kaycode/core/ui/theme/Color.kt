@@ -1,4 +1,4 @@
-package com.kaycode.moviesapp.ui.theme
+package com.kaycode.core.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
