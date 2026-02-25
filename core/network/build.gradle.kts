@@ -53,7 +53,7 @@ dependencies {
     implementation(libs.retrofit.gson)
     implementation(libs.hilt)
     ksp(libs.hilt.compiler)
-    implementation(project(":core:model"))
+    api(project(":core:model"))
     testImplementation(libs.junit)
     testImplementation(libs.mockito.kotlin)
     testImplementation(libs.coroutines.test)

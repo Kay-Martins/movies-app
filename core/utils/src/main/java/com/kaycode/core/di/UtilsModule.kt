@@ -4,22 +4,22 @@ import com.kaycode.core.utils.DateUtils
 import com.kaycode.core.utils.IDateUtils
 import com.kaycode.core.utils.IImageUtils
 import com.kaycode.core.utils.ImageUtils
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class UtilsModule {
+abstract class UtilsModule {
 
-    @Provides
+    @Binds
     @Singleton
-    fun provideDateUtils(dateUtils: DateUtils): IDateUtils = dateUtils
+    abstract fun bindDateUtils(dateUtils: DateUtils): IDateUtils
 
-    @Provides
+    @Binds
     @Singleton
-    fun provideImageUtils(imageUtils: ImageUtils): IImageUtils = imageUtils
+    abstract fun bindImageUtils(imageUtils: ImageUtils): IImageUtils
 
 }

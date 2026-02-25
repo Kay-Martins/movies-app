@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
-
 }
 
 android {
@@ -42,10 +42,10 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(project(":core:model"))
-    implementation(project(":core:network"))
-    implementation(project(":core:utils"))
-    implementation(project(":core:ui"))
+    api(project(":core:model"))
+    api(project(":core:network"))
+    api(project(":core:utils"))
+    api(project(":core:ui"))
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
     implementation(libs.hilt)

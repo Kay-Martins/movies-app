@@ -17,21 +17,20 @@ import dagger.hilt.android.scopes.ViewModelScoped
 
 @Module
 @InstallIn(ViewModelComponent::class)
-class LatestFilmsModule {
+abstract class LatestFilmsModule {
 
     @Binds
     @ViewModelScoped
-    fun bindLatestFilmsRepository(latestFilmsRepository: LatestFilmsRepository): ILatestFilmsRepository = latestFilmsRepository
+    abstract fun bindLatestFilmsRepository(latestFilmsRepository: LatestFilmsRepository): ILatestFilmsRepository
 
     @Binds
     @ViewModelScoped
-    fun bindGetLatestFilmsUseCase(getLatestFilmsUseCase: GetLatestFilmsUseCase): IGetLatestFilmsUseCase = getLatestFilmsUseCase
+    abstract fun bindGetLatestFilmsUseCase(getLatestFilmsUseCase: GetLatestFilmsUseCase): IGetLatestFilmsUseCase
 
     @Binds
     @ViewModelScoped
-    fun bindProvideMovieThumbnailList(movieThumbnailListProvider: MovieThumbnailListProvider): IMovieThumbnailListProvider = movieThumbnailListProvider
-
+    abstract fun bindProvideMovieThumbnailList(movieThumbnailListProvider: MovieThumbnailListProvider): IMovieThumbnailListProvider
     @Binds
     @ViewModelScoped
-    fun bindLatestFilmsManager(latestFilmsManager: LatestFilmsManager): ILatestFilmsManager = latestFilmsManager
+    abstract fun bindLatestFilmsManager(latestFilmsManager: LatestFilmsManager): ILatestFilmsManager
 }
