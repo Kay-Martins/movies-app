@@ -36,7 +36,7 @@ class LatestFilmsRepository @Inject constructor(
 
     private fun getHeaderMap() =
         mutableMapOf(
-            AUTHORISATION_HEADER_KEY to AUTHORISATION_HEADER_VALUE,
+            AUTHORISATION_HEADER_KEY to getAuthorisationValue(),
             CONTENT_TYPE_HEADER_KEY to CONTENT_TYPE_HEADER_VALUE
         )
 
